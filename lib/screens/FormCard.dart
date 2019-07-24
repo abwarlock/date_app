@@ -5,8 +5,6 @@ class FormCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
-      height: ScreenUtil.getInstance().setHeight(420),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8.0),
@@ -23,7 +21,7 @@ class FormCard extends StatelessWidget {
       ),
       child: Padding(
         padding:
-        EdgeInsets.only(top: 16.0, right: 16.0, left: 16.0),
+        EdgeInsets.all(10.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[

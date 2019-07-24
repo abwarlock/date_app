@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_date_app/screens/LoginScreen.dart';
+import 'package:flutter_date_app/screens/SignUpscreen.dart';
 import 'package:flutter_date_app/screens/SpalshScreen.dart';
 
 class RouteManager{
@@ -20,6 +21,7 @@ class RouteManager{
     return{
       splash: (_context) => SplashScreen(),
       login: (_context) => LoginScreen(),
+      signUp: (_context) => SignUpScreen(),
     };
   }
 }

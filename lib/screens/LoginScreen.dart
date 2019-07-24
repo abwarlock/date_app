@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_date_app/router/ScreenRouterFile.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'FormCard.dart';
@@ -115,7 +116,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     fontSize: 18),
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).pushNamed(RouteManager.signUp);
+                },
                 child: Text(
                   "Register",
                   style: TextStyle(
@@ -133,7 +136,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil.getInstance()..init(context);
     ScreenUtil.instance =
-        ScreenUtil(width: 750, height: 1334, allowFontScaling: true);
+        ScreenUtil(width: 750, height: 1234, allowFontScaling: true);
     return Scaffold(
       appBar: null,
       backgroundColor: Colors.redAccent,
@@ -142,13 +145,15 @@ class _LoginScreenState extends State<LoginScreen> {
         fit: StackFit.expand,
         children: <Widget>[
           Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: <Widget>[
               Padding(
                 padding: EdgeInsets.only(top: 20.0),
-                child: Image.asset(
-                  "assets/dating.jpg",
-                  width: ScreenUtil.getInstance().setWidth(800),
+                child: Center(
+                  child: Image.asset(
+                    "assets/dating.jpg",
+                  ),
                 ),
               ),
               Expanded(
@@ -160,46 +165,23 @@ class _LoginScreenState extends State<LoginScreen> {
               )
             ],
           ),
-          SingleChildScrollView(
-            child: Padding(
-              padding: EdgeInsets.only(left: 10.0, right: 10.0, top: 100.0),
-              child: Column(
-                children: <Widget>[
-                  Padding(
-                    padding: EdgeInsets.only(top: 120, bottom: 10),
-                    child: Container(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          CircleAvatar(
-                            backgroundColor: Colors.white,
-                            radius: 20.0,
-                            child: Icon(Icons.people),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 10),
-                            child: Text(
-                              "LOGO",
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontFamily: "Poppins-Bold",
-                                letterSpacing: .6,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.only(left: 10.0, right: 10.0, top: 50.0),
+                child: Column(
+                  children: <Widget>[
+                    FormCard(),
+                    SizedBox(
+                      height: ScreenUtil.getInstance().setHeight(40),
                     ),
-                  ),
-                  FormCard(),
-                  SizedBox(
-                    height: ScreenUtil.getInstance().setHeight(40),
-                  ),
-                  _userLoginWidget()
-                ],
+                    _userLoginWidget()
+                  ],
+                ),
               ),
-            ),
+            ],
           )
         ],
       ),
