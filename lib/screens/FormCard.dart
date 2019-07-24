@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_date_app/router/ScreenRouterFile.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FormCard extends StatelessWidget {
@@ -71,12 +72,17 @@ class FormCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
-                Text(
-                  "Forgot Password?",
-                  style: TextStyle(
-                    color: Colors.blue,
-                    fontFamily: "Poppins-Medium",
-                    fontSize: ScreenUtil.getInstance().setSp(30),
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).pushNamed(RouteManager.forgotPwd);
+                  },
+                  child: Text(
+                    "Forgot Password?",
+                    style: TextStyle(
+                      color: Colors.blue,
+                      fontFamily: "Poppins-Medium",
+                      fontSize: ScreenUtil.getInstance().setSp(30),
+                    ),
                   ),
                 )
               ],
