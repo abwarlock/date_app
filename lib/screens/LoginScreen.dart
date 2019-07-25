@@ -152,7 +152,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 padding: EdgeInsets.only(top: 20.0),
                 child: Center(
                   child: Image.asset(
-                    "assets/dating.jpg",
+                    "assets/navimg_1.jpg",
                   ),
                 ),
               ),
@@ -160,7 +160,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Container(),
               ),
               Image.asset(
-                "assets/dating_2.png",
+                "assets/navimg_2.png",
                 colorBlendMode: BlendMode.softLight,
               )
             ],

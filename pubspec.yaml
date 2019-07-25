@@ -46,6 +46,8 @@ flutter:
   assets:
   - assets/dating.jpg
   - assets/dating_2.png
+  - assets/navimg_1.jpg
+  - assets/navimg_2.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
