@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.red,
         primarySwatch: Colors.red,
+        hintColor: Colors.red,
       ),
       home: SplashScreen(),
       routes: RouteManager(context).getAppRouteMap(),
