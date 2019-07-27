@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_date_app/providers/RecoveryBlocData.dart';
 
-// ignore: must_be_immutable
-class ForgotCardWidget extends StatelessWidget {
-  RecoveryBloc counterBloc;
-
-  ForgotCardWidget({this.counterBloc});
-
+class NewPasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -17,42 +10,43 @@ class ForgotCardWidget extends StatelessWidget {
           end: Alignment.bottomLeft,
           stops: [0.1, 0.5, 0.7, 0.9],
           colors: [
-            Colors.indigo[500],
-            Colors.indigo[600],
-            Colors.indigo[700],
-            Colors.indigo[400],
+            Colors.green[500],
+            Colors.green[600],
+            Colors.green[700],
+            Colors.green[400],
           ],
         ),
       ),
       child: Padding(
         padding: EdgeInsets.only(top: 30, left: 10.0, right: 10.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             Column(
               children: <Widget>[
                 CircleAvatar(
                   backgroundColor: Colors.white70,
                   radius: 35.0,
-                  child: Icon(Icons.lock),
+                  child: Icon(Icons.vpn_key),
                 ),
                 Text(
-                  "Forgot Your Pasword with",
+                  "Reset Your Password",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: 45.0,
-                    fontWeight: FontWeight.w300,
+                    fontSize: 44.0,
+                    fontWeight: FontWeight.w400,
                     color: Colors.white,
                   ),
                 ),
               ],
             ),
             Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Padding(
                   padding: EdgeInsets.only(top: 8.0),
                   child: Text(
-                    "Enter your phone number or recovery email",
+                    "Enter your new Password",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 20.0,
@@ -64,7 +58,34 @@ class ForgotCardWidget extends StatelessWidget {
                   padding: EdgeInsets.only(top: 16.0),
                   child: TextFormField(
                     decoration: InputDecoration(
-                      labelText: "Recovery option",
+                      labelText: "New Password",
+                      labelStyle:
+                          TextStyle(color: Colors.white, fontSize: 15.0),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                        borderSide: BorderSide(
+                          color: Color(0xFFFFFFFF),
+                          style: BorderStyle.solid,
+                        ),
+                      ),
+                    ),
+                    validator: (val) {
+                      if (val.length == 0) {
+                        return "Password cannot be empty";
+                      } else {
+                        return null;
+                      }
+                    },
+                    keyboardType: TextInputType.emailAddress,
+                    style: new TextStyle(
+                        fontFamily: "Poppins", color: Colors.white),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 10.0),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      labelText: "Confirm Password",
                       labelStyle:
                           TextStyle(color: Colors.white, fontSize: 15.0),
                       border: OutlineInputBorder(
@@ -90,11 +111,12 @@ class ForgotCardWidget extends StatelessWidget {
               ],
             ),
             Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
                 InkWell(
                   onTap: () {
-                    counterBloc.setData("123");
+                    Navigator.of(context).pop();
                   },
                   child: Container(
                     decoration: BoxDecoration(
@@ -117,7 +139,7 @@ class ForgotCardWidget extends StatelessWidget {
                         child: InkWell(
                           child: Center(
                             child: Text(
-                              "Send Recovery Information",
+                              "Reset Passsword",
                               style: TextStyle(
                                   color: Colors.white,
                                   fontFamily: "Poppins-Medium",

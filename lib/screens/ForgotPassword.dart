@@ -3,6 +3,7 @@ import 'package:flutter_date_app/providers/RecoveryBlocData.dart';
 import 'package:flutter_date_app/providers/RecoveryProvider.dart';
 
 import 'ForgotCardWidget.dart';
+import 'NewPasswordScreen.dart';
 
 class ForgotPwdScreen extends StatefulWidget {
   @override
@@ -17,7 +18,7 @@ class _ForgotPwdScreenState extends State<ForgotPwdScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-            icon: Icon(Icons.arrow_back, color: Colors.black),
+            icon: Icon(Icons.arrow_back, color: Colors.white),
             onPressed: () {
               if (_counterBloc.data.isEmpty) {
                 Navigator.of(context).pop();
@@ -48,7 +49,7 @@ class _ForgotPwdScreenState extends State<ForgotPwdScreen> {
 
   Widget _buildBlocWidget(String recovoryData) {
     if (recovoryData.toString().isNotEmpty) {
-      return Scaffold();
+      return NewPasswordScreen();
     } else {
       return ForgotCardWidget(
         counterBloc: _counterBloc,
@@ -58,7 +59,7 @@ class _ForgotPwdScreenState extends State<ForgotPwdScreen> {
 
   Widget _buildWidget(Recovery recovoryData) {
     if (recovoryData.getCounter().toString().isNotEmpty) {
-      return Scaffold();
+      return NewPasswordScreen();
     } else {
       return ForgotCardWidget();
     }
