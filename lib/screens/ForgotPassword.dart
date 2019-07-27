@@ -18,7 +18,7 @@ class _ForgotPwdScreenState extends State<ForgotPwdScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-            icon: Icon(Icons.arrow_back, color: Colors.white),
+            icon: Icon(Icons.arrow_back_ios, color: Colors.white),
             onPressed: () {
               if (_counterBloc.data.isEmpty) {
                 Navigator.of(context).pop();

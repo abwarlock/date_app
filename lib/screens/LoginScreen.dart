@@ -66,7 +66,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).pushReplacementNamed(
+                      RouteManager.detail);
+                },
                 child: Container(
                   width: ScreenUtil.getInstance().setWidth(320),
                   height: ScreenUtil.getInstance().setHeight(100),
